@@ -1,0 +1,60 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>高校信息素养培训图谱</title><style>*{box-sizing:border-box}body{margin:0;background:#f7f5ed;color:#172b25;font:16px/1.65 system-ui,sans-serif}header{display:flex;justify-content:space-between;gap:12px;padding:16px max(5vw,16px);border-bottom:1px solid #cfcfc2}header span,small,#count,footer{color:#4d6055}main{max-width:1200px;margin:auto;padding:24px}.hero{background:#16392e;color:#fff8e9;padding:clamp(24px,6vw,72px);border-radius:20px;background-image:repeating-linear-gradient(125deg,transparent 0 48px,#ffffff0c 49px 50px)}.hero small{color:#b4d8aa;letter-spacing:.16em}h1{font-size:clamp(40px,8vw,88px);line-height:1.05;margin:24px 0}h2{margin:4px 0 16px;font-size:30px}.catalog,#compare{margin-top:42px}.filters{display:flex;flex-wrap:wrap;gap:12px}select,button{font:inherit;padding:8px 12px;border:1px solid #8a9b8e;border-radius:8px;background:#fff;color:inherit}button{cursor:pointer}button[aria-pressed=true]{background:#16392e;color:white}#cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,245px),1fr));gap:14px}article{background:#fffef9;border:1px solid #d8ded4;border-radius:14px;padding:18px;display:flex;flex-direction:column}article h3{margin:3px 0}article p{flex:1}.tag{display:inline-block;background:#e4eddf;margin:2px;padding:2px 7px;border-radius:6px;font-size:13px}a{color:#165941}article button{margin-top:14px}#matrix{overflow:auto}table{border-collapse:collapse;background:white;width:100%;min-width:480px}th,td{text-align:left;vertical-align:top;border:1px solid #d8ded4;padding:12px}th{background:#e4eddf}#selected{font-size:15px}footer{border-top:1px solid #ccc;margin-top:40px;padding:16px 0;font-size:14px}
+</style><body>
+<header><b>◈　高校图书馆观察</b><span>资料核查 · 2026-11-05</span></header>
+<main><section class="hero"><small>LIBRARY LEARNING ATLAS / 01</small><h1>高校信息素养<br>培训图谱</h1><p>集中查看高校图书馆的课程、讲座与学习资源。<br>按主题查找，按学校对比，回到官方来源核实。</p></section>
+<section class="catalog"><small>01 / 院校目录</small><h2>查找培训</h2><div class="filters"><select id="school" aria-label="筛选院校"><option value="">全部院校</option></select><select id="topic" aria-label="筛选主题"><option value="">全部主题</option></select></div><p>已收录 14 所高校图书馆的培训资料。可按院校和主题筛选，一次最多对比三所。</p><p id="count" role="status"></p><div id="cards"></div></section>
+<section id="compare"><small>02 / 并排对比</small><h2>院校对比 <span id="selected"></span></h2><p id="limit" role="status"></p><div id="matrix"></div></section>
+<footer>收录范围为中国大陆高校图书馆公开资料。条目为已核查样本，含历史课程与活动，报名和开放条件以官网为准。</footer></main><script>const trainingRecords = [
+ {name:'清华大学',city:'北京',formats:'学分课、慕课、系列讲座、院系定制',audience:'本科生、研究生及师生',topics:['文献检索','科研写作','信息评价'],detail:'学分课按学科和学习阶段设置。专题讲座包含实践和答疑，官网说明当学期多数讲座同步直播。',access:'校内读者可经荷塘雨课堂观看直播或回放。',sources:[['课程教学','https://lib.tsinghua.edu.cn/xxzc/kcjx.htm'],['培训讲座','https://lib.tsinghua.edu.cn/xxzc/pxjz.htm']]},
+ {name:'北京大学',city:'北京',formats:'通选课、视频公开课、往期工作坊',audience:'选课学生及参与活动的同学',topics:['文献检索','科研写作','信息评价','学术规范'],detail:'官网列出电子资源检索通选课。《信息素养概论》大纲包含信息评价与伦理，往期工作坊曾组织学术写作指导。',access:'公开课链接见官网，选课与活动资格需另查当期通知。',sources:[['信息素养课','https://www.lib.pku.edu.cn/portal/cn/fw/yixiaoshijiangzuo/xinxisuyang'],['课程大纲','https://lib.pku.edu.cn/portal/cn/fw/yixiaoshijiangzuo/xinxisuyang/suyanggailun/dagang'],['往期工作坊','https://www.lib.pku.edu.cn/5jlhd/56cgfb/564tsgtx/2023/d118q/2023118gzjz/5df8e809dbfc4455be91ce418bc15db2.htm']]},
+ {name:'复旦大学',city:'上海',formats:'本科与研究生课程、慕课资源、专题培训',audience:'本科生、研究生及培训读者',topics:['文献检索','科研写作','学术规范','AI 素养'],detail:'有医学文献检索及研究生学术规范与论文写作课程，新生专栏介绍了人工智能应用相关培训。',access:'教学页提供课程和资源入口，培训安排以图书馆通知为准。',sources:[['信息素养教学','https://library.fudan.edu.cn/infoliteracy/'],['新生专栏','https://library.fudan.edu.cn/xszl/']]},
+ {name:'上海交通大学',city:'上海',formats:'系列讲座培训（2025 年新生手册）',audience:'全校师生',topics:['文献检索','AI 素养','数据素养','科研工具'],detail:'新生手册将讲座分为 AI 与素养、信息检索、科研素养、工具应用、数据素养五类。',access:'公开手册可阅览，场次和参与条件需查当期通知。',sources:[['2025 年新生手册（PDF）','https://www.lib.sjtu.edu.cn/fresh/files/%E6%96%B0%E7%94%9F%E6%89%8B%E5%86%8C2025.pdf']]},
+ {"name":"浙江大学","formats":"系列讲座、选修课","audience":"师生","topics":["文献检索","科研写作","学术规范"],"detail":"“求真一小时”涵盖文献检索、论文发表、实用工具、信息伦理与专利。","access":"从“学在浙大”的图书馆课程入口查找线上资源。","sources":[["图书馆或学校官方资料","https://libweb.zju.edu.cn/jz/list.htm"]]},
+ {"name":"南京大学","formats":"知识讲座、培训学习资料","audience":"以场次通知为准","topics":["文献检索","科研写作","AI 素养"],"detail":"馆网列有学位论文检索、科研选题与投稿以及 AI 辅助数据库利用等讲座。","access":"从馆网讲座通知查看参加方式。","sources":[["图书馆或学校官方资料","https://lib.nju.edu.cn/"]]},
+ {"name":"中国科学技术大学","formats":"系列讲座、新生培训","audience":"师生及新生","topics":["文献检索","数据素养","AI 素养"],"detail":"2026 年系列培训包括 Excel 数据处理和智能辅助，图书馆也提供信息检索课程。","access":"以图书馆当期通知为准。","sources":[["图书馆或学校官方资料","https://lib.ustc.edu.cn/"]]},
+ {"name":"武汉大学","formats":"学分课程、数字素养培训、嵌入式教学","audience":"选课学生及各场次读者","topics":["文献检索","数据素养","学术规范","AI 素养"],"detail":"学分课程涵盖数据利用、医学文献检索和学术规范。","access":"《信息素养与实践》线上部分使用珞珈在线。","sources":[["图书馆或学校官方资料","https://lib.whu.edu.cn/"],["官方补充资料","https://oldwww.lib.whu.edu.cn/webfile/category/xxsy/912.html"]]},
+ {"name":"华中科技大学","formats":"一小时讲座、信息检索课程、定制培训","audience":"校内教学与科研读者","topics":["文献检索","AI 素养"],"detail":"图书馆结合专题讲座、定制培训、新媒体和学术交流开展信息素养教育。","access":"从图书馆教学与培训栏目查看详情。","sources":[["图书馆或学校官方资料","https://lib.hust.edu.cn/"],["官方补充资料","https://news.hust.edu.cn/info/1002/58664.htm"]]},
+ {"name":"西安交通大学","formats":"院系专题培训","audience":"本科生","topics":["文献检索","科研工具","学术规范"],"detail":"学校报道的往期专题讲座结合本科生文献调研场景演示 EndNote。","access":"报道所述活动采用线上与线下结合。","sources":[["图书馆或学校官方资料","https://news.xjtu.edu.cn/info/1219/233577.htm"]]},
+ {"name":"北京航空航天大学","formats":"一小时讲座、学分课程、专题培训","audience":"以当期通知为准","topics":[],"detail":"馆网列有一小时讲座和学分课程，并发布秋季专题培训公告。","access":"课程主题及报名安排见馆网。","sources":[["图书馆或学校官方资料","https://lib.buaa.edu.cn/"]]},
+ {"name":"哈尔滨工业大学","formats":"本科课程、嵌入式课程、专题讲座","audience":"本科生、校内师生、院系与课题组","topics":["文献检索","知识产权"],"detail":"开设本科文献检索与利用课程、院系数据库讲座及知识产权专题培训。","access":"院系及课题组可按学科服务页联系定制培训。","sources":[["图书馆或学校官方资料","https://lib.hit.edu.cn/2024/1202/c14793a360374/page.htm"]]},
+ {"name":"南方科技大学","formats":"信息素养系列讲座","audience":"校内师生","topics":["文献检索","科研工具","AI 素养"],"detail":"讲座分信息检索、数据库、工具软件和科研素养四类。","access":"部分往期讲座有资料或视频入口。","sources":[["图书馆或学校官方资料","https://lib.sustech.edu.cn/xljz/list.htm"]]},
+ {"name":"武汉科技大学","formats":"图文与视频微课、培训讲座","audience":"师生","topics":["文献检索"],"detail":"微课介绍数字资源、检索技巧及文献获取。","access":"馆网微课目录提供播放入口。","sources":[["图书馆或学校官方资料","https://tsg.wust.edu.cn/kyfw2/xxsyjywkc.htm"]]}
+];
+const schools = trainingRecords;
+const maxSchools = 3;
+const byId = id => document.getElementById(id);
+const picked = new Set();
+const links = school => !school.sources.length
+ ? '<a target="_blank" rel="noopener noreferrer" href="https://www.baidu.com/s?wd='+encodeURIComponent(school.name+' 图书馆 信息素养 培训')+'">检索培训资料 ↗</a>'
+ : school.sources.map(([label,url]) => '<a target="_blank" rel="noopener noreferrer" href="'+url+'">'+label+' ↗</a>').join('<br>');
+byId('school').append(...schools.map(({name}) => new Option(name,name)));
+const topics = [...new Set(schools.flatMap(school => school.topics))];
+byId('topic').append(...topics.map(topic => new Option(topic,topic)));
+function render() {
+ const name = byId('school').value;
+ const topic = byId('topic').value;
+ const visible = schools.filter(school => (!topic || school.topics.includes(topic)) && (!name || school.name === name));
+ byId('count').textContent = '显示 '+visible.length+' / '+schools.length+' 所院校';
+ byId('cards').innerHTML = visible.map(school => '<article><small>'+'已收录培训资料'+'</small><h3>'+school.name+'</h3><div>'+school.topics.map(tag=>'<span class="tag">'+tag+'</span>').join('')+'</div><p>'+school.detail+'</p><div>'+links(school)+'</div><button data-school="'+school.name+'" aria-pressed="'+picked.has(school.name)+'">'+(picked.has(school.name)?'移出对比':'加入对比')+'</button></article>').join('') || '<p>没有匹配结果。可切换院校或主题。</p>';
+ const chosen = schools.filter(school=>picked.has(school.name));
+ byId('selected').textContent = '已选 '+chosen.length+' / '+maxSchools+' 所';
+ const rows = [['培训形式','formats'],['主要对象','audience'],['培训主题','topics'],['内容特色','detail'],['访问与参与','access'],['资料入口','sources']];
+ byId('matrix').innerHTML = chosen.length<2 ? '<p>选择至少两所院校后显示对比表。筛选时会保留已选院校。</p>' : '<table><thead><tr><th scope="col">对比维度</th>'+chosen.map(s=>'<th scope="col">'+s.name+'</th>').join('')+'</tr></thead><tbody>'+rows.map(([label,key])=>'<tr><th scope="row">'+label+'</th>'+chosen.map(s=>'<td>'+(key==='sources'?links(s):key==='topics'?(s.topics.join('、') || '待核查'):s[key])+'</td>').join('')+'</tr>').join('')+'</tbody></table>';
+}
+byId('cards').addEventListener('click',event=>{
+ const name=event.target.dataset.school;
+ if (!name) return;
+ if (!picked.has(name) && picked.size >= maxSchools) {
+  byId('limit').textContent = '最多对比三所院校。请先移出一所。';
+  return;
+ }
+ byId('limit').textContent = '';
+ if (picked.has(name)) picked.delete(name);
+ else picked.add(name);
+ render();
+ [...byId('cards').querySelectorAll('button')].find(button=>button.dataset.school===name).focus();
+});
+byId('school').addEventListener('change',render);
+byId('topic').addEventListener('change',render);
+render();
+</script><style>#backnav{position:fixed;right:18px;bottom:18px;z-index:99999;display:flex;align-items:center;gap:6px;background:#1b2b45e8;color:#fff!important;text-decoration:none;font:600 13px/1 system-ui,-apple-system,"Microsoft YaHei",sans-serif;padding:11px 15px;border-radius:999px;box-shadow:0 8px 22px #0006;backdrop-filter:blur(6px)}#backnav:hover{background:#2f65bd}@media print{#backnav{display:none}}</style><a id="backnav" href="index.html"><span>&larr;</span><span>返回工具集</span></a></body></html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>信息素养教学工具集 · 四个课堂互动工具</title>
+<style>
+:root{--bg:#f5f7fb;--ink:#17243b;--muted:#627087;--line:#dfe6f0;--blue:#2f65bd;--teal:#168476}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,'Microsoft YaHei',sans-serif;line-height:1.7}
+header{background:linear-gradient(120deg,#142d51,#24528b);color:#fff;padding:56px max(24px,calc((100vw - 1080px)/2)) 48px}
+header .eyebrow{letter-spacing:2.5px;color:#b9d9ff;font-size:12px}
+h1{font-size:clamp(26px,3.4vw,40px);line-height:1.25;margin:14px 0 12px}
+header p{max-width:700px;color:#dbe9ff;margin:0;font-size:15px}
+main{max-width:1080px;margin:auto;padding:34px 20px 72px}
+.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:20px}
+@media(max-width:820px){.grid{grid-template-columns:1fr}}
+a.card{display:flex;flex-direction:column;background:#fff;border:1px solid var(--line);border-radius:18px;padding:26px 24px 22px;text-decoration:none;color:inherit;box-shadow:0 8px 24px #1e3c6510;transition:.18s}
+a.card:hover{transform:translateY(-3px);box-shadow:0 14px 32px #1e3c6518;border-color:#bccfe8}
+.tag{display:inline-block;font-size:12px;letter-spacing:.5px;padding:4px 10px;border-radius:999px;margin-bottom:14px;width:fit-content}
+.tag.b{background:#e8f0fc;color:var(--blue)}
+.tag.t{background:#e4f4f1;color:var(--teal)}
+.tag.g{background:#fbf1df;color:#b7822e}
+.tag.v{background:#ecebfb;color:#5a4bb5}
+a.card h2{font-size:21px;margin:0 0 8px;line-height:1.35}
+a.card p{margin:0;color:var(--muted);font-size:14px}
+.meta{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);display:flex;gap:18px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+.meta b{color:var(--ink);font-weight:650}
+.go{margin-top:16px;font-size:14px;color:var(--blue);font-weight:600}
+footer{max-width:1080px;margin:auto;padding:0 20px 56px;color:var(--muted);font-size:13px}
+footer p{margin:0 0 6px}
+</style>
+</head>
+<body>
+<header>
+  <div class="eyebrow">INFORMATION LITERACY · TEACHING TOOLKIT</div>
+  <h1>信息素养教学工具集</h1>
+  <p>四个可交互的课堂工具：GB/T 7714—2025 的文献类型与代码全景图、《高等教育信息素养框架》的互动知识图谱、从学术诚信到 Zotero 的参考文献学习路径，以及 14 所高校的信息素养培训对比。都可直接投屏使用，无需登录。</p>
+</header>
+<main>
+  <div class="grid">
+    <a class="card" href="gbt7714.html">
+      <span class="tag b">标准速查 · 2025 新版</span>
+      <h2>文献类型与代码全景图</h2>
+      <p>一页看懂 17 种文献类型代码、5 种电子资源载体代码。支持分组筛选、关键词搜索、点击查看释义，并提供组合标识实验室（如 [J/OL]）与 CSV 导出。</p>
+      <div class="meta"><span><b>17</b> 类型代码</span><span><b>5</b> 载体代码</span><span><b>2026.07</b> 实施</span></div>
+      <div class="go">打开全景图 →</div>
+    </a>
+    <a class="card" href="il-framework.html">
+      <span class="tag t">框架解读 · 互动图谱</span>
+      <h2>高等教育信息素养框架 · 知识图谱</h2>
+      <p>把 ACRL《高等教育信息素养框架》的六大阈限概念拆成可点击的节点图，逐条查看知识实践与 dispositions，适合课前导读与课堂讨论。</p>
+      <div class="meta"><span><b>6</b> 阈限概念</span><span><b>互动</b> 节点图</span><span><b>ACRL</b> 2016</span></div>
+      <div class="go">打开知识图谱 →</div>
+    </a>
+    <a class="card" href="ref-learning.html">
+      <span class="tag g">学习路径 · 从诚信到工具</span>
+      <h2>参考文献：从学术诚信到 Zotero</h2>
+      <p>一条五站式学习路线：先讲剽窃与学术诚信，再讲题录数据这层「文献身份证」，然后是引用规范、GB/T 7714—2025 著录，最后落到 Zotero 的文献管理流程。附学习检测。</p>
+      <div class="meta"><span><b>5</b> 学习站</span><span><b>Zotero</b> 实操</span><span><b>检测</b> 随堂</span></div>
+      <div class="go">打开学习路径 →</div>
+    </a>
+    <a class="card" href="training-atlas.html">
+      <span class="tag v">院校观察 · 培训对比</span>
+      <h2>高校信息素养培训图谱</h2>
+      <p>收录 14 所高校图书馆的公开培训资料。可按院校、主题筛选，一次最多并排对比三所，从培训形式、对象、主题、访问方式六个维度横向看差异。每条都附官方资料入口。</p>
+      <div class="meta"><span><b>14</b> 所院校</span><span><b>3</b> 所并排</span><span><b>2026.11</b> 核查</span></div>
+      <div class="go">打开培训图谱 →</div>
+    </a>
+  </div>
+</main>
+<footer>
+  <p>四页均为单文件交互页面，离线可用；本页仅作入口索引。</p>
+  <p>标准文本以正式发布版本为准，示例标识只展示代码组合方式，不构成完整参考文献著录。培训图谱收录的是已核查的公开样本，报名与开放条件以各馆官网为准。</p>
+</footer>
+</body>
+</html>

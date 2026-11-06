@@ -14,7 +14,9 @@
     .workspace{position:relative;flex:1;min-height:0}.workspace iframe{position:absolute;inset:0;width:100%;height:100%;border:0;background:#fff}.workspace iframe[hidden]{display:none}
     .mobile-title{display:none}
     @media(max-width:700px){.topbar{display:block;padding:9px 12px}.brand{display:none}nav{gap:4px}nav button{padding:9px 11px;font-size:13px}.workspace{min-height:0}}
-  </style>
+    .course-link{display:inline-block;flex:none;color:var(--blue);font-weight:650;text-decoration:none;padding:8px 10px;border-radius:9px}.course-link:hover,.course-link:focus-visible{background:#eaf0ff}
+  @media(max-width:700px){.course-link{padding:5px 11px;font-size:13px}}
+</style>
 </head>
 <body>
   <header class="topbar">
@@ -26,6 +28,7 @@
       <button id="tab-standard" role="tab" aria-selected="false" aria-controls="page-standard" data-page="standard" tabindex="-1">GB/T 7714—2025</button>
       <button id="tab-training" role="tab" aria-selected="false" aria-controls="page-training" data-page="training" tabindex="-1">高校培训图谱</button>
     </nav>
+    <a class="course-link" href="https://information-literacy-course-atlas.xingmf.chatgpt.site/">信息素养概念图谱 ↗</a>
   </header>
   <main class="workspace" aria-label="网页内容">
     <iframe id="page-life" title="生活有据：政府公开信息检索" src="./index.html"></iframe>
